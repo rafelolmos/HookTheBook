@@ -1,17 +1,19 @@
 import React from 'react';
 import {
-  BrowserRouter as Router,
+  BrowserRouter as Route,
   Switch,
-  Route
+
 } from "react-router-dom";
 
 import Home from './pages/Home';
 import About from './pages/About';
+import Button from './CountButton/Button';
 
 
 function App() {
   
   return (
+    <>
     <header>
       <Route>
         <Switch>
@@ -22,7 +24,9 @@ function App() {
     </header>
     <div>
       <div>Create React App BoilerPlate</div>
+      <Button />
     </div>
+    </>
   )
 }
 
