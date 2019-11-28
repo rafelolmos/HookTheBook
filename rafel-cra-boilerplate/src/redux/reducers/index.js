@@ -1,9 +1,10 @@
+import setCountReducer from './countReducer';
 import { combineReducers } from 'redux';
 
-import countReducer from './countReducer';
+
 
 const reducers = combineReducers({
-  countReducer
+  countReducerState: setCountReducer
 })
 
 export default reducers;
