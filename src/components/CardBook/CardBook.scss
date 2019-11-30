@@ -1,0 +1,119 @@
+*{
+   margin: 0px;
+   padding: 0px; 
+}
+
+.mainDiv{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid cornflowerblue;
+    width: 400px;
+	height: 280px;
+	border-radius: 15px;
+	padding: 1.5rem;
+	//background: white;
+	position: relative;
+    display: flex;
+	align-items: flex-start;
+	transition: 0.4s ease-out;
+	box-shadow: 0px 7px 10px rgba(black, 0.5);
+
+    .imageBook{
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        border-radius: 15px 0 0 15px;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 15px 0 0 15px;
+
+        }
+    }
+    .space{
+        width: 200px;
+        height: 285px;; 
+    }
+    .bookContent{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 285px;;
+        object-fit: cover;
+        position: absolute;
+        margin-left: 210px;
+        // top: 0;
+        // left: 0;
+        border-radius: 15px 0 0 15px;
+
+        .infBook{
+            border: 2px solid blue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .title{
+                font-size: 1em;
+            }
+            .author{
+                font-size: 1em;
+                font-style: italic;
+            }
+            .description{
+                font-size: 1em;
+                font-style: italic;
+
+            }
+
+        }
+    }
+}
+
+#detailBook{
+
+}
+
+.trafficLights{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+
+.input-option {
+	position: absolute;
+    left: -9999px;
+    
+}
+
+
+input[type=radio] + label {
+    border-radius: 50%;
+	box-shadow: 0 0 3px 3px yellowgreen;
+	width: 10px;
+	height: 10px;
+	transition: 500ms all;
+    padding: 5px;
+    margin: 10px;
+    
+    #red{
+        background: red;
+    }
+}
+
+input[type=radio]:checked + label {
+	border: 2px solid #fff;
+	box-shadow: 0 0 3px 3px darkred;
+	transform:
+	  rotateZ(-360deg)
+	  rotateX(360deg);
+}
+
+
