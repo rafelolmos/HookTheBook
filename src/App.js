@@ -7,7 +7,14 @@ import {
 
 import Home from './pages/Home';
 import About from './pages/About';
+<<<<<<< HEAD
 import MyBookList from './components/MyBookList';
+=======
+import Button from './CountButton/Button';
+import CardBook from './components/CardBook';
+import BookISBNSearch from './services/callAPI';
+import SearchBook from './components/SearchBook';
+>>>>>>> searchBook
 
 
 function App() {
@@ -23,8 +30,17 @@ function App() {
       </Route>
     </header>
     <div>
+<<<<<<< HEAD
       <div>HookTheBook</div>
       <div><MyBookList /></div>
+=======
+      <div>Create React App BoilerPlate</div>
+
+        <Button />
+        <CardBook />
+        <BookISBNSearch />
+        <SearchBook />
+>>>>>>> searchBook
 
     </div>
     </>
