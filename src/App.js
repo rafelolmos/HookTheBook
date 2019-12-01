@@ -7,8 +7,7 @@ import {
 
 import Home from './pages/Home';
 import About from './pages/About';
-import Button from './CountButton/Button';
-import CardBook from './components/CardBook';
+import MyBookList from './components/MyBookList';
 
 
 function App() {
@@ -24,10 +23,8 @@ function App() {
       </Route>
     </header>
     <div>
-      <div>Create React App BoilerPlate</div>
-
-        <Button />
-        <CardBook />
+      <div>HookTheBook</div>
+      <div><MyBookList /></div>
 
     </div>
     </>
