@@ -10,6 +10,7 @@ import About from './pages/About';
 import Button from './CountButton/Button';
 import CardBook from './components/CardBook';
 import BookISBNSearch from './services/callAPI';
+import SearchBook from './components/SearchBook';
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
         <Button />
         <CardBook />
         <BookISBNSearch />
+        <SearchBook />
 
     </div>
     </>
