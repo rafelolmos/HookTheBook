@@ -1,0 +1,23 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+body {
+    box-sizing: border-box;
+    color: $color1;
+ }
+
+
+/*
+    TODO:
+
+    1.- Add general styles for the body
+    2.- Add reset styles
+    3.- Add general font sizes (h1, h2, h3, p, span...)
+    4.- Add common colors and variables in a variables file
+    
+    EXTRA:
+    - Add a mixins file
+*/

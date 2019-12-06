@@ -5,7 +5,6 @@ const MyBookList = () => {
     return ( 
         <ul>
             <CardBook />
-            <CardBook />
         </ul>
 
      );
