@@ -1,22 +1,24 @@
 import React from 'react'
-
 import './CardBook.scss'
 
 
-const CardBook = () => {
+const CardBook = ({title = '', authors = '', pages = 0, published = '', description = '', image = ''}) => {
+
     return ( 
+
         <div className = "mainDiv">
             <button id="detailBook">
                 DETAIL
             </button>
             <div className="imageBook">
-                <img src="https://picsum.photos/200/300" alt="#"/>                
+                <img src={image} alt="#"/>                
             </div>
             <div className="bookContent">
                 <div className="infBook">
-                    <p className="title">Title</p>
-                    <p className="author">Author</p>
-                    <p className="description">lorem impsum lorem impsum lorem impsum lorem impsum </p>
+                    <p className="title">Title: {title}</p>
+                    <p className="author">Author: {authors}</p>
+                    <p className="published">Year: {published}</p>
+                    <p className="pages">Pages: {pages}</p>
                 </div>
 
                 <div className="trafficLights">
@@ -35,5 +37,5 @@ const CardBook = () => {
      );
 }
  
-export default CardBook;
+export default CardBook
 

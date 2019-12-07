@@ -18,7 +18,6 @@ const SearchISBN = ({onPush}) => {
         <form className="searchBook" onSubmit={showBook}>
             <input placeholder="type ISBN number" value={searchedISBN} onChange={(event)=>setSearchedISBN(event.target.value)} />
             <button type="submit">SEARCH</button>
-            <button>ADD BOOK</button>
         </form>
      );
 }

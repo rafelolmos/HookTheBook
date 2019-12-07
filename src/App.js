@@ -13,17 +13,13 @@ import { getItem } from './services/database';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import MyBookList from './components/MyBookList';
 import Header from './components/Header/';
-import SearchISBN from './components/SearchISBN';
-import BookISBNSearch from './components/AddBookButton/';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Layout from './Layout';
 
 function App() {
 
-  const [valueISBN, setValueISBN]= useState('');
   const [isLoading, setIsLoading] = useState(true);
   
   /**
@@ -36,15 +32,11 @@ function App() {
    */
   const user = useSelector(state => state.user); 
   
-  const handleISBNvalue = (ISBNvalue)=>{
-    setValueISBN(ISBNvalue)
-  }
-
   useEffect(() => {
     const cancelObserver = registerAuthObserver(async (user) => {
       console.log("TCL: cancelObserver -> user", user)
       if (user) {
-        const profile = await getItem('profiles', user.uid);
+        const profile = await getItem('users', user.uid);
         console.log("TCL: cancelObserver -> profile", profile)
         if (profile) {
           // setUserRedux(profile);
@@ -67,7 +59,7 @@ function App() {
     }
   }, []);
 
-  // if (isLoading) return <div>Loading...</div>
+  if (isLoading) return <div>Loading...</div>
   
   return (
     <Layout>
@@ -80,10 +72,6 @@ function App() {
           <Route path="/about" component={About} />
         </Switch>
       </Router>
-      <div>HookTheBook - 9788482649665</div>
-      <div><SearchISBN onPush={handleISBNvalue}/></div>
-      <div><BookISBNSearch valueISBN={valueISBN}/></div>
-      <div>{isLoading ? <div>Loading...</div> : <MyBookList />}</div>
     </Layout>
   );
 }

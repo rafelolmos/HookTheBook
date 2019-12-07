@@ -28,6 +28,7 @@ async function getAll(collection) {
   return results;
 }
 
+
 async function getAllRealTime({ collection, filters, order, callback }) {
   const db = getDbInstance();
   const dbCollection = db.collection(collection);

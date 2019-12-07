@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
 import _get from 'lodash.get';
+import Preview from '../Preview';
 
 
 const BookISBNSearch = ({ valueISBN = '' }) => {
@@ -19,12 +20,22 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
                 if(volumeInfo) setBookItem(volumeInfo)
             });
         }
-    },[])
+    },[valueISBN])
     
     if (!Object.keys(bookItem).length) return '';
+    console.log("author", bookItem.authors)
         
-    return ( 
-        <div>Entra{valueISBN}</div>
+    return (
+        <>
+            <Preview
+                title={bookItem.title} 
+                authors={bookItem.authors[0]}
+                pages={bookItem.pageCount}
+                published={bookItem.publishedDate}
+                description={bookItem.description} 
+                image={bookItem.imageLinks.thumbnail}
+            />
+        </>
         );
 }
      

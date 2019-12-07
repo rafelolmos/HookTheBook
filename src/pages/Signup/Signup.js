@@ -16,10 +16,10 @@ const Signup = ({ history }) => {
 
     cancelObserver = registerAuthObserver(async (user) => {
       if (user) {
-        const profile = await getItem('profiles', user.uid);
+        const profile = await getItem('users', user.uid);
         if (!profile) {
           const result = await addItemWithId(
-            'profiles', 
+            'users', 
             { name: formData.name, email: formData.email },
             user.uid
           );   
@@ -67,6 +67,7 @@ const Signup = ({ history }) => {
           label="Password" 
           value={formData.password} 
           onChange={value => setFormData({ ...formData, password: value })} 
+        
         />
         <button>Registrar</button>
       </form>
