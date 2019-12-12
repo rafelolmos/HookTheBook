@@ -13,13 +13,17 @@ import { getItem } from './services/database';
 
 import Home from './pages/Home';
 import About from './pages/About';
-import MyBookList from './components/MyBookList';
+
 import Header from './components/Header/';
 import SearchISBN from './components/SearchISBN';
 import BookISBNSearch from './components/AddBookButton/';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Layout from './Layout';
+import MyBooks from './pages/MyBooks/';
+import MyAlerts from './pages/MyAlerts/';
+import MyFriendsBooks from './pages/MyFriendsBooks/';
+
 
 function App() {
 
@@ -36,15 +40,15 @@ function App() {
    */
   const user = useSelector(state => state.user); 
   
-  const handleISBNvalue = (ISBNvalue)=>{
-    setValueISBN(ISBNvalue)
-  }
+  // const handleISBNvalue = (ISBNvalue)=>{
+  //   setValueISBN(ISBNvalue)
+  // }
 
   useEffect(() => {
     const cancelObserver = registerAuthObserver(async (user) => {
       console.log("TCL: cancelObserver -> user", user)
       if (user) {
-        const profile = await getItem('profiles', user.uid);
+        const profile = await getItem('users', user.uid);
         console.log("TCL: cancelObserver -> profile", profile)
         if (profile) {
           // setUserRedux(profile);
@@ -67,27 +71,32 @@ function App() {
     }
   }, []);
 
+  // const defaultRoute = user
+  // ? <Route path="/" component={Home} />
+  // : <Route path="/" component={Login} />;
+
   // if (isLoading) return <div>Loading...</div>
   
   return (
     // <Layout>
-    <>
       <Router>
         <Switch>
           <Route path="/signup" component={Signup}></Route>
           <Route path="/login" component={Login}></Route>
-          <Route path="/" component={Home} />
+          {/* {user && <Route path="/user/:id" component={Home} />} */}
+          {/* {defaultRoute} */}
+          <Route exact="/" component={Home} />
           <Route path="/about" component={About} />
+          <Route path="/MyBooks" component={MyBooks} />
+          <Route path="/MyFriendsBooks" component={MyFriendsBooks} />
+          <Route path="/MyAlerts" component={MyAlerts} />
           {/* <Route path="/header" component={Header} /> */}
-      
         </Switch>
+      {/* <div><SearchISBN onPush={handleISBNvalue}/></div>
+      <div><BookISBNSearch valueISBN={valueISBN}/></div> */}
+      {/* <div>{isLoading ? <div>Loading...</div> : <MyBooks />}</div> */}
       </Router>
-      <div>HookTheBook - 9788482649665</div>
-      <div><SearchISBN onPush={handleISBNvalue}/></div>
-      <div><BookISBNSearch valueISBN={valueISBN}/></div>
-      <div>{isLoading ? <div>Loading...</div> : <MyBookList />}</div>
-    </>
-    //</Layout>
+    // </Layout>
   );
 }
 

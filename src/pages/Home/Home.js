@@ -12,7 +12,6 @@ const Home = () => {
         setValueISBN(ISBNvalue)
       }
 
-
     return (
         <Layout>
             <div className="navigation-menu">

@@ -1,8 +1,6 @@
 import React, {useState, useEffect, useSelector } from 'react';
 
 import { getAll } from '../../services/database';
-import { stringify } from 'querystring';
-
 
 
 const SearchBook = () => {

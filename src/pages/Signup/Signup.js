@@ -67,7 +67,6 @@ const Signup = ({ history }) => {
           label="Password" 
           value={formData.password} 
           onChange={value => setFormData({ ...formData, password: value })} 
-        
         />
         <button className="login-button">Register</button>
       </form>

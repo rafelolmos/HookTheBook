@@ -1,38 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import { getAllRealTime } from '../../services/database';
-import { useSelector} from 'react-redux';
+import React from 'react';
 
 import './CardBook.scss'
 
-const CardBook = ({title = '', authors = '', pages = 0, published = '', description = '', image = ''}) => {
-
-    const user = useSelector((state)=> state.user);
-
-    const [bookList, setBookList] = useState([])
-
-    useEffect(() => {
-
-        getAllRealTime({
-            collection: 'books',
-            filters: { field: 'user', condition: '==', value: user.id },
-            order: 'timestamp',
-            callback: (collectionData) => {
-            const results = [];
-            collectionData.forEach((document) => {
-                const data = document.data();
-                const addedBookDate = new Date(data.timestamp);
-                data.date = addedBookDate.toLocaleDateString();
-                data.time = addedBookDate.toLocaleTimeString();
-                results.push(data);
-            });
-            setBookList(results);
-            }
-        });
-      }, [])
+const CardBook = (list) => {
 
     return ( 
         <div className="card">
-            {bookList.map((book, i)=>(
+            {list.map((book, i)=>(
                 <div key={book.timestamp}>
                     <div className="mainDiv">
                         <button id="detailBook">

@@ -8,6 +8,7 @@ import './Header.scss'
 
 const Header = ({ history }) => {
     const user = useSelector(state => state.user);
+    console.log('user: ', user);
 
     const handleLogout = () => {
       logout();
@@ -27,7 +28,7 @@ const Header = ({ history }) => {
                             <li><Link to="/login">Login</Link></li>
                         </>
                         )
-                }
+                    }
                 </ul>
             </div>
         </div>

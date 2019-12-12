@@ -27,14 +27,10 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
         };
 
         const result = await addItem('books', data);
-        console.log('data: ', data);
-        console.log('result: ', result);
         if (result) {
         setBook('')
         }
     };
-
-    console.log('user: ', user);
 
     return ( 
         <div className="form-content">
