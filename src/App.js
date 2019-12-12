@@ -49,18 +49,15 @@ function App() {
       console.log("TCL: cancelObserver -> user", user)
       if (user) {
         const profile = await getItem('users', user.uid);
-        console.log("TCL: cancelObserver -> profile", profile)
         if (profile) {
           // setUserRedux(profile);
           dispatch(setUser(profile))
-          console.log('profile: ', profile);
           
         } else {
           console.log("todavía se está registrando");
         }
       } else {
         // setUserRedux(null);
-        console.log('null: ', null);
         dispatch(setUser(null))
       }
       setIsLoading(false);
@@ -85,11 +82,11 @@ function App() {
           <Route path="/login" component={Login}></Route>
           {/* {user && <Route path="/user/:id" component={Home} />} */}
           {/* {defaultRoute} */}
-          <Route exact="/" component={Home} />
+          <Route path="/" exact component={Home} />
           <Route path="/about" component={About} />
-          <Route path="/MyBooks" component={MyBooks} />
-          <Route path="/MyFriendsBooks" component={MyFriendsBooks} />
-          <Route path="/MyAlerts" component={MyAlerts} />
+          <Route path="/my-books" component={MyBooks} />
+          <Route path="/my-friends-books" component={MyFriendsBooks} />
+          <Route path="/my-alerts" component={MyAlerts} />
           {/* <Route path="/header" component={Header} /> */}
         </Switch>
       {/* <div><SearchISBN onPush={handleISBNvalue}/></div>

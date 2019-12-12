@@ -2,11 +2,10 @@ import React from 'react';
 
 import './CardBook.scss'
 
-const CardBook = (list) => {
+const CardBook = ({ book }) => {
 
     return ( 
         <div className="card">
-            {list.map((book, i)=>(
                 <div key={book.timestamp}>
                     <div className="mainDiv">
                         <button id="detailBook">
@@ -26,7 +25,6 @@ const CardBook = (list) => {
                         </div>
                     </div>
                 </div>
-            ))}
         </div>
     )}
 

@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import Layout from '../../Layout';
 import SearchISBN from '../../components/SearchISBN';
 import BookISBNSearch from '../../components/AddBookButton/AddBookButton';
-import NavBar from '../../components/NavBar';
 import './Home.scss'
 
 const Home = () => {

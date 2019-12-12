@@ -33,12 +33,14 @@ const MyFriendsBooks = () => {
             setBookList(results);
             }
         });
-      }, [])
+      }, [user])
 
     return ( 
         <Layout>
-            <div>
-                <CardBook list={bookList}/>
+            <div className="cardBook-container">
+            {bookList.map((book, i)=>(
+                <CardBook book={book} />
+            ))}
             </div>
         </Layout>
      );

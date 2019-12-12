@@ -17,6 +17,8 @@ const MyBooks = () => {
 
     useEffect(() => {
 
+        if (!user) return;
+
         getAllRealTime({
             collection: 'books',
             filters: { field: 'user', condition: '==', value: user.id },
@@ -33,35 +35,14 @@ const MyBooks = () => {
             setBookList(results);
             }
         });
-      }, [])
+      }, [user])
 
     return (
         <Layout>
             <div className="cardBook-container">
-                {/* <CardBook bookList /> */}
-                    <div className="card">
-                    {bookList.map((book, i)=>(
-                    <div key={book.timestamp}>
-                        <div className="mainDiv">
-                            <button id="detailBook">
-                                DETAIL
-                            </button>
-                            <div className="imageBook">
-                                <img className="image" src={book.image} alt="#"/>                
-                            </div>
-                            <div className="bookContent">
-                                <div className="infBook">
-                                    <p className="title">Title: {book.title}</p>
-                                    <p className="author">Author: {book.authors}</p>
-                                    <p className="published">Year: {book.published}</p>
-                                    <p className="pages">Pages: {book.pages}</p>
-                                </div>
-                                <div className="bookState">Book State: {book.bookState}</div>
-                            </div>
-                        </div>
-                    </div>
-                ))}
-                </div>
+            {bookList.map((book, i)=>(
+                <CardBook book={book} />
+            ))}
             </div>
         </Layout>
      );
