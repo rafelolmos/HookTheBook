@@ -12,7 +12,6 @@ const NavBar = () => {
                 <li className="link-li"><Link to='MyBooks'>MyBooks</Link></li>
                 <li className="link-li"><Link to='MyAlerts'>MyAlerts</Link></li>
                 <li className="link-li"><Link to='MyFriendsBooks'>MyFriendsBooks</Link></li>
-                {/* <div className="animation start-home"></div> */}
             </ul>
         </div>
      );

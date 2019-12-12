@@ -16,10 +16,10 @@ const Home = () => {
     return (
         <Layout>
             <div className="navigation-menu">
-                <div>HookTheBook - 9788482649665</div>
-                <div>HookTheBook - 0735619670</div>
                 <div><SearchISBN onPush={handleISBNvalue}/></div>
                 <div><BookISBNSearch valueISBN={valueISBN}/></div>  
+                <div>HookTheBook - 9788482649665</div>
+                <div>HookTheBook - 0735619670</div>
             </div>
         </Layout>
     )

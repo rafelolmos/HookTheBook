@@ -9,8 +9,6 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
 
     useEffect(()=>{
         if(valueISBN){
-            console.log('${valueISBN}: ', valueISBN);
-
             fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${valueISBN}`)
             .then(function(response) {
                 return response.json();
@@ -23,7 +21,6 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
     },[valueISBN])
     
     if (!Object.keys(bookItem).length) return '';
-    console.log("author", bookItem.authors)
         
     return (
         <>

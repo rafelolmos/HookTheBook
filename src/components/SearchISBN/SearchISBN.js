@@ -11,7 +11,6 @@ const SearchISBN = ({onPush}) => {
     const showBook = (event)=>{
         event.preventDefault();
         //BookISBNSearch(searchedISBN);
-        console.log('searchISBN2: ', searchedISBN);
         onPush(searchedISBN);
     }
 
