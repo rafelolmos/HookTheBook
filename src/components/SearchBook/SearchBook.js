@@ -1,26 +1,49 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useSelector } from 'react';
 
-const bookListName = [
-    "Hola",
-    "hola HOLA",
-    "adeu",
-    "asdfsdf",
-    "ASDadasdf"
-];
+import { getAll } from '../../services/database';
+import { stringify } from 'querystring';
+
+
 
 const SearchBook = () => {
 
     const [searchBookItem, setSearchBookiItem]= useState('')
+
     const [searchResult, setSearchResult] = useState([])
 
+    const [bookListSearch, setBookListSearch] = useState()
     
+    
+    // const user = useSelector((state)=> state.user);
     const handleSearch = (event) =>{setSearchBookiItem(event.target.value)};
     
+    useEffect(() => {
 
-    useEffect (() => {
-        const results = bookListName.filter(bookItem => bookItem.toLowerCase().includes(searchBookItem));
-        setSearchResult(results);
-    }, [searchBookItem]);
+        (async()=>{const result = await getAll('books')
+
+        const aa=JSON.stringify(result)
+        const bb=Object.keys(aa)
+        console.log('bb: ', bb);
+
+        console.log('aa: ', aa);
+       
+        
+        setBookListSearch(aa)
+        console.log('setBookListSearch: ', setBookListSearch);
+
+
+    })()
+    }, [])
+    
+
+
+
+
+
+    // useEffect (() => {
+    //     const results = bookListSearch.authors.filter(bookItem => bookItem.includes(searchBookItem));
+    //     setSearchResult(results);
+    // }, [searchBookItem]);
  
 
     return (

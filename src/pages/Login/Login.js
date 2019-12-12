@@ -3,6 +3,8 @@ import FormInput from '../../components/FormInput';
 
 import { login } from '../../services/auth';
 
+import './Login.scss'
+
 
 const Login = ({ history }) => {
   const [formData, setFormData] = useState({ email: '', password: ''});
@@ -27,7 +29,7 @@ const Login = ({ history }) => {
   return (
     <section className="form-container">
       {error && <div className="form-error">{error}</div>}
-      <form onSubmit={handleSubmitForm}>
+      <form className="submit-form" onSubmit={handleSubmitForm}>
         <FormInput 
           label="Email" 
           value={formData.email} 
@@ -39,7 +41,7 @@ const Login = ({ history }) => {
           value={formData.password} 
           onChange={value => setFormData({ ...formData, password: value })} 
         />
-        <button>Login</button>
+        <button className="login-button">Login</button>
       </form>
     </section>
   );

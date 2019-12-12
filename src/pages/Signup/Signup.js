@@ -42,7 +42,7 @@ const Signup = ({ history }) => {
     const { name, email, password } = formData;
 
     if (!name || !email || !password) {
-      setError('Todos los campos son obligatorios');
+      setError('Please, fill all the fields');
     } else {
       signup(email, password);
     }
@@ -69,7 +69,7 @@ const Signup = ({ history }) => {
           onChange={value => setFormData({ ...formData, password: value })} 
         
         />
-        <button>Registrar</button>
+        <button className="login-button">Register</button>
       </form>
     </section>
   );

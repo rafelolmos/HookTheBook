@@ -1,29 +1,13 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux'
 
 // import uploadFile from '../../services/storage';
 import { addItem } from '../../services/database';
 
+import './Preview.scss';
 
 
-// getAllRealTime({
-//     collection: 'books',
-//     filters: { field: 'user', condition: '==', value: user },
-//     order: 'timestamp',
-//     callback: (collectionData) => {
-//       const results = [];
-//       collectionData.forEach((document) => {
-//         const data = document.data();
-//         const addedBookDate = new Date(data.timestamp);
-//         data.date = addedBookDate.toLocaleDateString();
-//         data.time = addedBookDate.toLocaleTimeString();
-//         results.push(data);
-//       });
-//       setBookList(results);
-//     }
-//   });
-
-const Preview = ({title = '', authors = '', pages = 0, published = '', description = '', image = '' }) => {
+const Preview = ({title = '', authors = '', pages = 0, published = '', description = '', image = '', bookState = 'available' }) => {
     const user = useSelector((state)=> state.user)
     const [book, setBook] = useState([]);
 
@@ -38,6 +22,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
             published,
             description,
             image,
+            bookState: 'available', //no se m'afegeix al firestore
             timestamp: +(new Date()) 
         };
 
@@ -52,11 +37,17 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
     console.log('user: ', user);
 
     return ( 
-        <div className='preview'>
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRXJsjaC65LLa3LRcK2t2Z08keV4viwBS1Jff3Ryo98Y9ywwAku" alt="" width="80px" />
-            <p className="title">Title: {title}</p>
-            <p className="author">Author: {authors}</p>
-            <button className="addBook" onClick={handleAddBook}>AddBook</button>
+        <div className="form-content">
+            <div className='preview'>
+                <img src={image} alt="" width="60px" />
+                <div className="book-information">
+                    <p className="title">Title: <span>{title}</span></p>
+                    <p className="author">Author: <span>{authors}</span></p>
+                    <p className="author">Pages: <span>{pages}</span></p>
+                    <p className="author">Year: <span>{published}</span></p>
+                </div>
+                <button className="addBook" onClick={handleAddBook}>HOOK IT!</button>
+            </div>
         </div>
 
      );

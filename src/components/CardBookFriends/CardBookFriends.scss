@@ -1,0 +1,134 @@
+.mainDiv{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border: 2px solid white;
+    width: 400px;
+	height: 280px;
+	border-radius: 15px;
+	padding: 1.5rem;
+	background:#E0D8D4;
+	position: relative;
+    display: flex;
+	align-items: flex-start;
+    transition: 0.4s ease-out;
+    box-shadow: 0px 7px 10px rgba(black, 0.5);
+
+    &:hover{
+        transform: translateY(10px);
+        opacity:1;
+     
+        &:before{
+            opacity: 1;
+        }
+        .imageBook{
+            opacity: 0.3;
+            transition: 600ms all;
+        }
+    }
+    .imageBook{
+        display: flex;
+        flex-direction: column;
+        // justify-items: center;
+        align-items: center;
+        width: 50%;
+        // height: 100%;
+        // object-fit: cover;
+        position: absolute;
+        top: 20%;
+        left: 0;
+        // border-radius: 15px 0 0 15px;
+
+        .imgage{
+            align-self: center;
+            transform:rotateY( 45deg);
+            box-shadow:-10px 10px 10px 2px rgba(0,0,0,.2), -2px 0px 0px 0px #888;
+
+            // width: 100%;
+            // height: 100%;
+            // object-fit: cover;
+            // position: absolute;
+            // top: 0;
+            // left: 0;
+            // border-radius: 15px 0 0 15px;
+        }
+        &:hover{
+            z-index: -1;
+        }
+    }
+
+    .bookContent{
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 285px;;
+        object-fit: cover;
+        position: absolute;
+        margin-left: 210px;
+        // top: 0;
+        // left: 0;
+        border-radius: 15px 0 0 15px;
+
+        .infBook{
+            border: 2px solid cornflowerblue;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            .title{
+                font-size: 1.3em;
+            }
+            .author{
+                font-size: 1.3em;
+                font-style: italic;
+            }
+            .description{
+                font-size: 1em;
+                font-style: italic;
+            }
+        }
+    }
+}
+
+
+.trafficLights{
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around; 
+}
+
+.input-option {
+	position: absolute;
+    left: -9999px; 
+}
+
+input[type=radio] + label {
+    border-radius: 50%;
+	box-shadow: 0 0 3px 3px yellowgreen;
+	width: 10px;
+	height: 10px;
+	transition: 500ms all;
+    padding: 5px;
+    margin: 10px;
+}
+
+input[type=radio]:checked + label {
+	border: 2px solid #fff;
+	box-shadow: 0 0 3px 3px darkred;
+	transform:
+	  rotateZ(-360deg)
+	  rotateX(360deg);
+}
+
+#detailBook{
+    position: absolute;
+    z-index: 1px;
+    align-self: center;
+    width:170px;
+    height: 40px;;
+    border-radius: 20px;
+    background-color: cornflowerblue;
+    border: 2px solid #fff;
+	box-shadow: 0 0 10px 10px white;
+    color: white;
+    font-size: 20px;
+}
+

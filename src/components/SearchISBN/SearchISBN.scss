@@ -1,0 +1,42 @@
+.searchBook{
+    
+    display:flex;
+    align-self: flex-end;;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width:400px;
+	margin:100px auto;
+	background:#fff;
+	border-radius:30px 30px 30px 2px;
+    padding:20px;
+    input{
+        text-align: center;
+        background-color: rgb(217, 217, 219);
+        box-sizing: border-box;
+        width: 50%;
+        display: block;
+        outline: none;
+        border: none;
+        border-radius: 30px 30px 30px 2px;
+        height: 38px;
+        line-height: 25px;
+        font-size: 16px;
+        padding: 4px;
+        &:hover{
+            background: cornflowerblue;
+            color:#fff
+        }
+    }
+    .search-button{
+        background:  cornflowerblue;
+        border: none;
+        padding: 10px 20px 10px 20px;
+        border-radius: 30px 30px 30px 2px;
+        color: #fff;
+        font-size: 16px;
+        &:hover{
+            background: rgb(4, 91, 252);
+            color:#fff;
+        }
+    }
+}

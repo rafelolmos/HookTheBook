@@ -4,6 +4,8 @@ import { useSelector } from 'react-redux';
 
 import { logout } from '../../services/auth';
 
+import './Header.scss'
+
 const Header = ({ history }) => {
     const user = useSelector(state => state.user);
 
@@ -14,12 +16,11 @@ const Header = ({ history }) => {
 
     return (
         <div className="header">
-            <h2>HookTheBook</h2>
-            <div>
+            <div className="header-basic">
+                <h2 className="title-name">Hook The Book</h2>
                 <ul>
-                    <li><Link to="/">Home</Link></li>
                     {user 
-                    ? <li>{user.name} <button onClick={handleLogout}>Logout</button></li>
+                    ? <li>{user.name} <button className="logout-button" onClick={handleLogout}>Logout</button></li>
                     : (
                         <>
                             <li><Link to="/signup">Signup</Link></li>
@@ -28,13 +29,6 @@ const Header = ({ history }) => {
                         )
                 }
                 </ul>
-            </div>
-            <div className="linksGroup">
-            <button><Link to='Home'>Home</Link></button>
-            <button><Link to='About'>About</Link></button>
-            <button><Link to='MyBooks'>MyBooks</Link></button>
-            <button><Link to='MyAlerts'>MyAlerts</Link></button>
-            <button><Link to='MyFriendsBooks'>MyFriendsBooks</Link></button>
             </div>
         </div>
       );

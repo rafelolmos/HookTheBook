@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
 
+import './SearchISBN.scss'
+
 
 const SearchISBN = ({onPush}) => {
 
     const [searchedISBN, setSearchedISBN] = useState()
-    
     
     
     const showBook = (event)=>{
@@ -17,7 +18,7 @@ const SearchISBN = ({onPush}) => {
     return ( 
         <form className="searchBook" onSubmit={showBook}>
             <input placeholder="type ISBN number" value={searchedISBN} onChange={(event)=>setSearchedISBN(event.target.value)} />
-            <button type="submit">SEARCH</button>
+            <button className="search-button" type="submit">SEARCH</button>
         </form>
      );
 }

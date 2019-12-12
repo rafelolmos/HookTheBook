@@ -1,0 +1,83 @@
+.header{
+    background-color: white;
+    opacity: 0.8;
+    display: block;
+    // overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; /* Position the navbar at the top of the page */
+    width: 100%; /* Full width */
+    margin-top:0;
+
+    .header-basic{
+        opacity: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        .title-name{
+            font-family: 'Dancing Script', cursive;
+            font-size: 50px;
+            margin: 0 0 0 15px;
+            color: rgb(90, 45, 36);
+            
+        }
+
+        ul{
+            display: flex;
+            flex-direction: row; 
+            list-style-type: none;
+            text-align: center;
+            color: white;
+            cursor: pointer;
+            &:visited{
+                color:#fff;
+            }
+            &:link{
+                color:#fff;
+                text-decoration: none;
+            }
+
+            li{
+                justify-content: center;
+                text-align: center;
+                width:auto;
+                color: white;
+                background:  cornflowerblue;
+                border: none;
+                padding: 10px;
+                margin: 15px;
+                border-radius: 30px 30px 30px 2px;
+                font-size: 16px;
+                &:hover{
+                    background: rgb(4, 91, 252);
+                    color:#fff;
+                }
+                &:link{
+                    color:#fff;
+                    text-decoration: none;
+                }
+                &:visited{
+                    color:#fff;
+                    text-decoration: none;
+                }
+                .logout-button{
+                    justify-content: center;
+                    text-align: center;
+                    width: auto;
+                    color: cornflowerblue;
+                    background:  white;
+                    border: none;
+                    padding: 10px;
+                    border-radius: 30px 30px 30px 2px;
+                    font-size: 16px;
+                    &:hover{
+                        padding: 8px;
+                        border: 2px solid white;
+                        background: rgb(4, 91, 252);
+                        color:#fff;
+                    }
+                }
+            }
+        }
+    }
+}

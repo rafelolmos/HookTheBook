@@ -17,6 +17,10 @@ import Header from './components/Header/';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Layout from './Layout';
+import MyBooks from './pages/MyBooks'
+import MyFriendsBooks from './pages/MyFriendsBooks';
+import SearchISBN from './components/SearchISBN';
+import SearchBook from './components/SearchBook/SearchBook';
 
 function App() {
 
@@ -61,18 +65,30 @@ function App() {
 
   if (isLoading) return <div>Loading...</div>
   
+  const defaultRoute = user
+  ? <Route path="/" component={Home} />
+  : <Route path="/" component={Login} />;
+
+
   return (
-    <Layout>
+    // <Layout>
       <Router>
         <Header />
         <Switch>
           <Route path="/signup" component={Signup}></Route>
           <Route path="/login" component={Login}></Route>
-          <Route path="/" component={Home} />
-          <Route path="/about" component={About} />
+          {user && <Route path="/user/:id" component={Home} />}
+          {defaultRoute}
+          <Route exact path="/" component={Home} />
+          <Route path="/About" component={About} />
+          <Route path="/MyBooks" component={MyBooks} />
+          <Route path="/MyFriendsBooks" component={MyFriendsBooks} />
         </Switch>
+        {/* <MyFriendsBooks /> */}
+        <MyBooks />
+        <SearchBook />
       </Router>
-    </Layout>
+    // </Layout>
   );
 }
 
