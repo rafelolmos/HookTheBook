@@ -9,6 +9,7 @@ import './Preview.scss';
 
 const Preview = ({title = '', authors = '', pages = 0, published = '', description = '', image = '', bookState = 'available' }) => {
     const user = useSelector((state)=> state.user)
+
     const [book, setBook] = useState([]);
 
     const handleAddBook = async () => {
@@ -23,7 +24,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
             description,
             image,
             bookState: 'available', //no se m'afegeix al firestore
-            timestamp: +(new Date()) 
+            timestamp: +(new Date())
         };
 
         const result = await addItem('books', data);

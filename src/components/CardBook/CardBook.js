@@ -1,14 +1,46 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
+import { deleteItem } from '../../services/database';
 import './CardBook.scss'
+import PopUp from '../PopUp';
+
+
+// const user = useSelector((state)=> state.user);
+// console.log('user: ', user);
+
+
+// getDbInstance().collection("books").doc("book.id").update({
+//     "bookState": "Reserved"
+// })
+// .then(function() {
+//     console.log("Document successfully updated!");
+// });
+
+
 
 const CardBook = ({ book }) => {
+        
+    // const handleBookState = (()=>{
+    //     book.update({bookState:'Reserved'})
 
-    return ( 
+    //     console.log('book.bookState: ', book.bookState);
+    // })
+
+    const handleDeleteBook = async () => {
+        await deleteItem('books', book.id);
+    }
+//    const showPopUp = false
+
+//    const handlePopUp = (()=>{
+//     !showPopUp ? <PopUp /> : null
+//    })
+
+    return (
         <div className="card">
+            {/* {book.user !== user ? "my list" : "no list"} */}
                 <div key={book.timestamp}>
                     <div className="mainDiv">
-                        <button id="detailBook">
+                        <button id="detailBook" /*onClick={handlePopUp}*/>
                             DETAIL
                         </button>
                         <div className="imageBook">
@@ -22,30 +54,13 @@ const CardBook = ({ book }) => {
                                 <p className="pages">Pages: {book.pages}</p>
                             </div>
                             <div className="bookState">Book State: {book.bookState}</div>
+                            <button className="changeBookState" /*onClick={handleBookState}*/>RESERVE IT</button>
+                            <button className="deleteBook" onClick={handleDeleteBook}>DELETE IT</button>
                         </div>
                     </div>
                 </div>
         </div>
     )}
-
-  
-
-       
-//                 {/* <div className="trafficLights">
-//                     <input type="radio" name="optionLights" value="red" className="input-option" id="red"/>
-//                     <label htmlFor="red"></label>
-//                     <label>Available</label>
-//                     <input type="radio" name="optionLights" value="yellow" className="input-option" id="yellow" />
-//                     <label htmlFor="yellow"></label>
-//                     <label>Reserved</label>
-//                     <input type="radio" name="optionLights" value="green" className="input-option" id="green"/>
-//                     <label htmlFor="green"></label>
-//                     <label>Borrowed</label>
-//                 </div> */}
-//             </div>
-//         </div>
-//      );
-// }
  
 export default CardBook
 

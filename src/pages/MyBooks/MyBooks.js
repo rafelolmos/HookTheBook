@@ -26,13 +26,14 @@ const MyBooks = () => {
             callback: (collectionData) => {
             const results = [];
             collectionData.forEach((document) => {
-                const data = document.data();
+                const data = {id: document.id, ...document.data()};
                 const addedBookDate = new Date(data.timestamp);
                 data.date = addedBookDate.toLocaleDateString();
                 data.time = addedBookDate.toLocaleTimeString();
                 results.push(data);
             });
             setBookList(results);
+            console.log('results: ', results);
             }
         });
       }, [user])
@@ -40,9 +41,11 @@ const MyBooks = () => {
     return (
         <Layout>
             <div className="cardBook-container">
-            {bookList.map((book, i)=>(
-                <CardBook book={book} />
-            ))}
+                <div className="window">
+                {bookList.map((book, i)=>(
+                    <CardBook book={book} />   
+                ))}
+                </div>
             </div>
         </Layout>
      );

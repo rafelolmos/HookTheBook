@@ -14,9 +14,9 @@ const MyFriendsBooks = () => {
 
     const [bookList, setBookList] = useState([])
 
-
-    useEffect(() => {
     
+    useEffect(() => {
+
         getAllRealTime({
             collection: 'books',
             filters: { field: 'user', condition: '==', value: user.id }, //ha de ser differnt de l'usuari
