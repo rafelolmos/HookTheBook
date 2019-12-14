@@ -1,48 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
-import { deleteItem } from '../../services/database';
+import { deleteItem, updateItem } from '../../services/database';
+import { useSelector } from 'react-redux'
+
 import './CardBook.scss'
 import PopUp from '../PopUp';
 
 
-// const user = useSelector((state)=> state.user);
-// console.log('user: ', user);
-
-
-// getDbInstance().collection("books").doc("book.id").update({
-//     "bookState": "Reserved"
-// })
-// .then(function() {
-//     console.log("Document successfully updated!");
-// });
-
-
-
 const CardBook = ({ book }) => {
+    
+    const [showPopUp, setShowPopUp] = useState(false)
+    const userLend = useSelector((state)=> state.user.name);
+    const currentUser = useSelector((state)=> state.user.id);
+    console.log('currentUser: ', currentUser);
         
-    // const handleBookState = (()=>{
-    //     book.update({bookState:'Reserved'})
+    const handleBookState = async () => {
 
-    //     console.log('book.bookState: ', book.bookState);
-    // })
+        book.bookState = 'Reserved';
+        book.userRequest = userLend;
+        await updateItem('books', book,book.id)
+        console.log('book: ', book);
+    }
+
+    const handleLendBook = async () => {
+
+        book.bookState = 'Lended';
+        await updateItem('books', book,book.id)
+        console.log('book: ', book);
+    }
 
     const handleDeleteBook = async () => {
         await deleteItem('books', book.id);
     }
-//    const showPopUp = false
-
-//    const handlePopUp = (()=>{
-//     !showPopUp ? <PopUp /> : null
-//    })
+    
+    const setPopup = () => {
+        setShowPopUp(true)
+    }
+    console.log('currentUser.id: ', currentUser.id);
+    console.log('book.user: ', book.user);
 
     return (
         <div className="card">
-            {/* {book.user !== user ? "my list" : "no list"} */}
                 <div key={book.timestamp}>
                     <div className="mainDiv">
-                        <button id="detailBook" /*onClick={handlePopUp}*/>
-                            DETAIL
-                        </button>
                         <div className="imageBook">
                             <img className="image" src={book.image} alt="#"/>                
                         </div>
@@ -52,13 +52,20 @@ const CardBook = ({ book }) => {
                                 <p className="author">Author: {book.authors}</p>
                                 <p className="published">Year: {book.published}</p>
                                 <p className="pages">Pages: {book.pages}</p>
+                                <p className="owner">Pages: {book.pages}</p>
+
                             </div>
                             <div className="bookState">Book State: {book.bookState}</div>
-                            <button className="changeBookState" /*onClick={handleBookState}*/>RESERVE IT</button>
-                            <button className="deleteBook" onClick={handleDeleteBook}>DELETE IT</button>
+                            {currentUser === book.user && <button className="deleteBook" onClick={handleDeleteBook}>DELETE IT</button>}
+                            {currentUser === book.user && book.bookState === 'Reserved' && <button className="notAvailableBook" onClick={handleLendBook}>LEND IT</button>}
+                            {currentUser !== book.user && <button className="changeBookState" onClick={handleBookState}>RESERVE IT</button>}
                         </div>
+                        <button className="detailBook" onClick={()=>setPopup()}>
+                            DETAIL
+                        </button>
                     </div>
                 </div>
+                {showPopUp && <PopUp book={book} setClose={setShowPopUp} />}
         </div>
     )}
  

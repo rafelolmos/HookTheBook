@@ -90,36 +90,36 @@
 }
 
 
-.trafficLights{
-    display:flex;
-    flex-direction: column;
-    justify-content: space-around; 
-}
+// .trafficLights{
+//     display:flex;
+//     flex-direction: column;
+//     justify-content: space-around; 
+// }
 
-.input-option {
-	position: absolute;
-    left: -9999px; 
-}
+// .input-option {
+// 	position: absolute;
+//     left: -9999px; 
+// }
 
-input[type=radio] + label {
-    border-radius: 50%;
-	box-shadow: 0 0 3px 3px yellowgreen;
-	width: 10px;
-	height: 10px;
-	transition: 500ms all;
-    padding: 5px;
-    margin: 10px;
-}
+// input[type=radio] + label {
+//     border-radius: 50%;
+// 	box-shadow: 0 0 3px 3px yellowgreen;
+// 	width: 10px;
+// 	height: 10px;
+// 	transition: 500ms all;
+//     padding: 5px;
+//     margin: 10px;
+// }
 
-input[type=radio]:checked + label {
-	border: 2px solid #fff;
-	box-shadow: 0 0 3px 3px darkred;
-	transform:
-	  rotateZ(-360deg)
-	  rotateX(360deg);
-}
+// input[type=radio]:checked + label {
+// 	border: 2px solid #fff;
+// 	box-shadow: 0 0 3px 3px darkred;
+// 	transform:
+// 	  rotateZ(-360deg)
+// 	  rotateX(360deg);
+// }
 
-#detailBook{
+.detailBook{
     position: absolute;
     z-index: 1px;
     align-self: center;

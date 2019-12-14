@@ -1,62 +1,32 @@
-import React, {useState, useEffect, useSelector } from 'react';
-
-import { getAll } from '../../services/database';
+import React, { useState, useEffect } from "react";
 
 
-const SearchBook = () => {
+const SearchBook = (props) => {
+    console.log('props: ', props);
+  
+  const [searchInput, setSearchInput] = useState('');
 
-    const [searchBookItem, setSearchBookiItem]= useState('')
+  
 
-    const [searchResult, setSearchResult] = useState([])
+  const handleChange = word => {
+      setSearchInput(word);
+  }
 
-    const [bookListSearch, setBookListSearch] = useState()
-    
-    
-    // const user = useSelector((state)=> state.user);
-    const handleSearch = (event) =>{setSearchBookiItem(event.target.value)};
-    
-    useEffect(() => {
+//   useEffect (()=>{
 
-        (async()=>{const result = await getAll('books')
-
-        const aa=JSON.stringify(result)
-        const bb=Object.keys(aa)
-        console.log('bb: ', bb);
-
-        console.log('aa: ', aa);
-       
-        
-        setBookListSearch(aa)
-        console.log('setBookListSearch: ', setBookListSearch);
+//     var filteredArray = props.filter((str)=>{
+//         return str.toLowerCase().indexOf(searchInput).toLowerCase() >= 0; 
+//     });
+//     console.log('filteredArray: ', filteredArray);
 
 
-    })()
-    }, [])
-    
+//   },[searchInput]);
 
-
-
-
-
-    // useEffect (() => {
-    //     const results = bookListSearch.authors.filter(bookItem => bookItem.includes(searchBookItem));
-    //     setSearchResult(results);
-    // }, [searchBookItem]);
- 
-
-    return (
-        <>
-        <div>
-            <input type="text" placeholder="search a book" value={searchBookItem} onChange={handleSearch}/>
-        </div>
-        {searchBookItem !== undefined ?  <div></div> :
-            <ul>
-                {searchResult.map(item => (
-                <li>{item}</li>))}
-            </ul> 
-    }
-        </>
-    )
+  return (
+      <div>
+          <input type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)} />
+      </div>
+  )
 }
- 
+
 export default SearchBook;

@@ -33,7 +33,6 @@ const MyBooks = () => {
                 results.push(data);
             });
             setBookList(results);
-            console.log('results: ', results);
             }
         });
       }, [user])
@@ -43,7 +42,7 @@ const MyBooks = () => {
             <div className="cardBook-container">
                 <div className="window">
                 {bookList.map((book, i)=>(
-                    <CardBook book={book} />   
+                    <CardBook key={book.id} book={book} />   
                 ))}
                 </div>
             </div>

@@ -16,7 +16,8 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
         if (!book) return;
 
         const data = {   
-            user: user.id, 
+            user: user.id,
+            owner: user.name,
             title,
             authors,
             pages,
