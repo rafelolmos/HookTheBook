@@ -3,6 +3,7 @@ import FormInput from '../../components/FormInput';
 
 import { signup, registerAuthObserver } from '../../services/auth';
 import { addItemWithId, getItem } from '../../services/database';
+import Header from '../../components/Header';
 
 
 let cancelObserver;
@@ -49,6 +50,8 @@ const Signup = ({ history }) => {
   }
 
   return (
+    <>
+   <Header />
     <section className="form-container">
       {error && <div className="form-error">{error}</div>}
       <form onSubmit={handleSubmitForm}>
@@ -71,6 +74,7 @@ const Signup = ({ history }) => {
         <button className="login-button">Register</button>
       </form>
     </section>
+    </>
   );
 }
  

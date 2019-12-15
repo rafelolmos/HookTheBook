@@ -38,6 +38,7 @@ const CardBook = ({ book }) => {
     }
     console.log('currentUser.id: ', currentUser.id);
     console.log('book.user: ', book.user);
+    console.log('book: ', book);
 
     return (
         <div className="card">
@@ -48,17 +49,19 @@ const CardBook = ({ book }) => {
                         </div>
                         <div className="bookContent">
                             <div className="infBook">
-                                <p className="title">Title: {book.title}</p>
-                                <p className="author">Author: {book.authors}</p>
-                                <p className="published">Year: {book.published}</p>
-                                <p className="pages">Pages: {book.pages}</p>
-                                <p className="owner">Pages: {book.pages}</p>
+                                <p className="owner"><span>{book.owner}</span>'s book</p>
+                                <p className="title">Title: <span>{book.title}</span></p>
+                                <p className="author">Author: <span>{book.authors}</span></p>
+                                <p className="published">Year: <span>{book.published}</span></p>
+                                <p className="pages">Pages: <span>{book.pages}</span></p>
+
 
                             </div>
                             <div className="bookState">Book State: {book.bookState}</div>
-                            {currentUser === book.user && <button className="deleteBook" onClick={handleDeleteBook}>DELETE IT</button>}
+                            {!!book.userRequest && <div className="userRequest">Who Borrowed?: <span>{book.userRequest}</span></div>}
                             {currentUser === book.user && book.bookState === 'Reserved' && <button className="notAvailableBook" onClick={handleLendBook}>LEND IT</button>}
                             {currentUser !== book.user && <button className="changeBookState" onClick={handleBookState}>RESERVE IT</button>}
+                            {currentUser === book.user && <button className="deleteBook" onClick={handleDeleteBook}>DELETE IT</button>}
                         </div>
                         <button className="detailBook" onClick={()=>setPopup()}>
                             DETAIL

@@ -1,32 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 
 
-const SearchBook = (props) => {
-    console.log('props: ', props);
+const SearchBook = ({ bookList, setFilteredBookList }) => {
   
   const [searchInput, setSearchInput] = useState('');
-
-  
 
   const handleChange = word => {
       setSearchInput(word);
   }
 
-//   useEffect (()=>{
-
-//     var filteredArray = props.filter((str)=>{
-//         return str.toLowerCase().indexOf(searchInput).toLowerCase() >= 0; 
-//     });
-//     console.log('filteredArray: ', filteredArray);
-
-
-//   },[searchInput]);
+  const handleClick = () =>{
+    setFilteredBookList( bookList, searchInput )
+  }
 
   return (
-      <div>
-          <input type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)} />
+      <div className="searchBook" >
+          <input placeholder="search book" type="text" value={searchInput} onChange={(e) => handleChange(e.target.value)} />
+          <button className="search-button" type="submit" onClick={handleClick}>SEARCH</button>
       </div>
-  )
+    )
 }
 
 export default SearchBook;

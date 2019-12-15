@@ -11,10 +11,11 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
     const user = useSelector((state)=> state.user)
 
     const [book, setBook] = useState([]);
-
+    
     const handleAddBook = async () => {
         if (!book) return;
-
+        
+        
         const data = {   
             user: user.id,
             owner: user.name,
@@ -27,10 +28,10 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
             bookState: 'available', //no se m'afegeix al firestore
             timestamp: +(new Date())
         };
-
+        
         const result = await addItem('books', data);
         if (result) {
-        setBook('')
+            setBook('');
         }
     };
 

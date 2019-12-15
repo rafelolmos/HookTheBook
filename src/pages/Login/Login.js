@@ -4,6 +4,7 @@ import FormInput from '../../components/FormInput';
 import { login } from '../../services/auth';
 
 import './Login.scss'
+import Header from '../../components/Header';
 
 
 const Login = ({ history }) => {
@@ -17,7 +18,7 @@ const Login = ({ history }) => {
     const { email, password } = formData;
 
     if (!email || !password) {
-      setError('Todos los campos son obligatorios');
+      setError('Fill all the fields');
     } else {
       const result = await login(email, password);
       if (result) {
@@ -27,6 +28,8 @@ const Login = ({ history }) => {
   }
 
   return (
+    <>
+    <Header />
     <section className="form-container">
       {error && <div className="form-error">{error}</div>}
       <form className="submit-form" onSubmit={handleSubmitForm}>
@@ -44,6 +47,7 @@ const Login = ({ history }) => {
         <button className="login-button">Login</button>
       </form>
     </section>
+    </>
   );
 }
  

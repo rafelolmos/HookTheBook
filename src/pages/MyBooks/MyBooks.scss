@@ -1,3 +1,18 @@
+.mainBar{
+    margin-top:142px;
+    display: flex;
+    justify-content: space-between;
+    .title{
+        width:auto
+    }
+    .navigation-menu{
+        width:auto;
+        height: 100px;
+
+    }
+}
+
+
 .cardBook-container{
     display: flex;
     flex-flow: wrap;

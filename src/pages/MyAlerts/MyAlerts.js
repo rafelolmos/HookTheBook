@@ -43,6 +43,7 @@ const MyAlerts = () => {
 
     return (
         <Layout>
+            <h1>My Alerts</h1>
             <div className="cardBook-container">
                 <div className="window">
                 {bookList.map((book, i)=>(

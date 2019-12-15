@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { getAllRealTime } from '../../services/database';
 import { useSelector} from 'react-redux';
+import SearchISBN from '../../components/SearchISBN';
+import BookISBNSearch from '../../components/AddBookButton/AddBookButton';
 
 import './MyBooks.scss'
 
@@ -10,10 +12,13 @@ import Layout from '../../Layout';
 const MyBooks = () => {
 
     const user = useSelector((state)=> state.user);
-    console.log('user: ', user);
 
     const [bookList, setBookList] = useState([])
-    console.log('setBookList: ', setBookList);
+
+    const [valueISBN, setValueISBN]= useState('');
+    const handleISBNvalue = (ISBNvalue)=>{
+        setValueISBN(ISBNvalue)
+      }
 
     useEffect(() => {
 
@@ -39,6 +44,13 @@ const MyBooks = () => {
 
     return (
         <Layout>
+            <div className="mainBar">
+                <div className="title"><h1>My Books</h1></div>
+                <div className="navigation-menu">
+                    <div><SearchISBN onPush={handleISBNvalue}/></div>
+                    <div><BookISBNSearch valueISBN={valueISBN}/></div>  
+                </div>
+            </div>
             <div className="cardBook-container">
                 <div className="window">
                 {bookList.map((book, i)=>(

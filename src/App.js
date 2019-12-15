@@ -4,7 +4,7 @@ import {
   Switch,
   Route
 } from "react-router-dom";
-import { connect, useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { setUser } from './redux/actions/userActions';
 import { registerAuthObserver } from './services/auth';
@@ -12,14 +12,8 @@ import { getItem } from './services/database';
 
 
 import Home from './pages/Home';
-import About from './pages/About';
-
-import Header from './components/Header/';
-import SearchISBN from './components/SearchISBN';
-import BookISBNSearch from './components/AddBookButton/';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
-import Layout from './Layout';
 import MyBooks from './pages/MyBooks/';
 import MyAlerts from './pages/MyAlerts/';
 import MyFriendsBooks from './pages/MyFriendsBooks/';
@@ -83,7 +77,6 @@ function App() {
           {/* {user && <Route path="/user/:id" component={Home} />} */}
           {/* {defaultRoute} */}
           <Route path="/" exact component={Home} />
-          <Route path="/about" component={About} />
           <Route path="/my-books" component={MyBooks} />
           <Route path="/my-friends-books" component={MyFriendsBooks} />
           <Route path="/my-alerts" component={MyAlerts} />
