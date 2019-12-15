@@ -10,23 +10,20 @@ import PopUp from '../PopUp';
 const CardBook = ({ book }) => {
     
     const [showPopUp, setShowPopUp] = useState(false)
-    const userLend = useSelector((state)=> state.user.name);
     const currentUser = useSelector((state)=> state.user.id);
-    console.log('currentUser: ', currentUser);
-        
+    const userLend = useSelector((state)=> state.user.name);
+    
     const handleBookState = async () => {
-
+        
         book.bookState = 'Reserved';
         book.userRequest = userLend;
         await updateItem('books', book,book.id)
-        console.log('book: ', book);
     }
 
     const handleLendBook = async () => {
 
         book.bookState = 'Lended';
         await updateItem('books', book,book.id)
-        console.log('book: ', book);
     }
 
     const handleDeleteBook = async () => {
@@ -36,9 +33,6 @@ const CardBook = ({ book }) => {
     const setPopup = () => {
         setShowPopUp(true)
     }
-    console.log('currentUser.id: ', currentUser.id);
-    console.log('book.user: ', book.user);
-    console.log('book: ', book);
 
     return (
         <div className="card">

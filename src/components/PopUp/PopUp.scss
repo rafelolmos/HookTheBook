@@ -9,13 +9,28 @@
     bottom: 0;
     margin: auto;
     background-color: rgba(0,0,0, 0.5);
-  }
-  .popup_inner {
-    
-    left: 25%;
-    right: 25%;
-    top: 25%;
-    bottom: 25%;
-    margin: auto;
-    background: white;
+    .popup-inner {
+      margin: auto 100px;
+      padding: 15px;
+      border-radius: 4px;
+      background: white;
+      .closeButton{
+        display: block;
+        justify-content: center;
+        text-align: center;
+        width: auto;
+        color: cornflowerblue;
+        background:  white;
+        border: none;
+        padding: 10px;
+        border-radius: 30px 30px 30px 2px;
+        font-size: 16px;
+        &:hover{
+            padding: 8px;
+            border: 2px solid white;
+            background: rgb(4, 91, 252);
+            color:#fff;
+        }
+    }
+    }
   }

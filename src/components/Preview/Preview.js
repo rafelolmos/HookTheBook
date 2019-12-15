@@ -15,7 +15,6 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
     const handleAddBook = async () => {
         if (!book) return;
         
-        
         const data = {   
             user: user.id,
             owner: user.name,
@@ -37,7 +36,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
 
     return ( 
         <div className="form-content">
-            <div className='preview'>
+            <div className="preview">
                 <img src={image} alt="" width="60px" />
                 <div className="book-information">
                     <p className="title">Title: <span>{title}</span></p>

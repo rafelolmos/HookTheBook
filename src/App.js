@@ -20,7 +20,6 @@ import MyFriendsBooks from './pages/MyFriendsBooks/';
 
 
 function App() {
-
   const [valueISBN, setValueISBN]= useState('');
   const [isLoading, setIsLoading] = useState(true);
   
@@ -62,40 +61,29 @@ function App() {
     }
   }, []);
 
-  // const defaultRoute = user
+  const isLogged = user!== null
   // ? <Route path="/" component={Home} />
   // : <Route path="/" component={Login} />;
 
   // if (isLoading) return <div>Loading...</div>
+
+
   
   return (
-    // <Layout>
       <Router>
         <Switch>
-          <Route path="/signup" component={Signup}></Route>
-          <Route path="/login" component={Login}></Route>
+          {isLogged && <Route path="/" exact component={MyBooks} />}
+          {!isLogged && <Route path="/" exact component={Login} />}
+          {!isLogged &&<Route path="/signup" component={Signup}></Route>}
+          {!isLogged && <Route path="/login" component={Login}></Route>}
           {/* {user && <Route path="/user/:id" component={Home} />} */}
-          {/* {defaultRoute} */}
-          <Route path="/" exact component={Home} />
           <Route path="/my-books" component={MyBooks} />
           <Route path="/my-friends-books" component={MyFriendsBooks} />
           <Route path="/my-alerts" component={MyAlerts} />
           {/* <Route path="/header" component={Header} /> */}
         </Switch>
-      {/* <div><SearchISBN onPush={handleISBNvalue}/></div>
-      <div><BookISBNSearch valueISBN={valueISBN}/></div> */}
-      {/* <div>{isLoading ? <div>Loading...</div> : <MyBooks />}</div> */}
       </Router>
-    // </Layout>
   );
 }
-
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     setUserRedux: (user) => dispatch(setUser(user))
-//   }
-// }
-
-// export default connect(null, mapDispatchToProps)(App);
 
 export default App;

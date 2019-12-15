@@ -1,18 +1,21 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 import { logout } from '../../services/auth';
 
 import './Header.scss'
 
-const Header = ({ history }) => {
+const Header = () => {
     const user = useSelector(state => state.user);
+    const history = useHistory()
+
     console.log('user: ', user);
 
     const handleLogout = () => {
       logout();
       history.push('/');
+      console.log('history: ', history);
     }
 
     return (
