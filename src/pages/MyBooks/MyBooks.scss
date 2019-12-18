@@ -12,10 +12,16 @@
     }
 }
 
-
 .cardBook-container{
-    display: flex;
-    flex-flow: wrap;
-    height: 550px;
-    overflow-y: scroll;
+    // display: flex;
+    // flex-flow: wrap;
+    // height: 550px;
+    // overflow-y: scroll;
+    .window{
+        width: 100vw;
+        display: flex;
+        flex-flow: wrap;
+        height: 550px;
+        overflow-y: scroll;
+    }
 }

@@ -6,7 +6,7 @@ import Preview from '../Preview';
 
 const BookISBNSearch = ({ valueISBN = '' }) => {
     const [bookItem, setBookItem] = useState({})
-
+    
     useEffect(()=>{
         if(valueISBN){
             fetch(`https://www.googleapis.com/books/v1/volumes?q=isbn:${valueISBN}`)
@@ -16,11 +16,14 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
             .then(data => {
                 const volumeInfo = _get(data, 'items[0].volumeInfo', '')
                 if(volumeInfo) setBookItem(volumeInfo)
-            });
+            })
         }
     },[valueISBN])
     
-    if (!Object.keys(bookItem).length) return '';
+    console.log('bookItem: ', bookItem);
+    console.log('setBookItem: ', setBookItem);
+    
+    if (!Object.keys(bookItem).length) return ''
         
     return (
         <>

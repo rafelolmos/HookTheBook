@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getAllRealTime } from '../../services/database';
 import { useSelector} from 'react-redux';
 
-import '../MyBooks/MyBooks.scss'
+import '../MyAlerts/MyAlerts.scss'
 
 import CardBook from '../../components/CardBook/CardBook';
 import Layout from '../../Layout';
@@ -34,7 +34,7 @@ const MyAlerts = () => {
             results.push(data);
         });
         const list = results.filter(function(elem){
-            return elem.bookState !== 'available';
+            return elem.bookState !== 'AVAILABLE' && elem.user === user.id;
         })
         setBookList(list);
         }

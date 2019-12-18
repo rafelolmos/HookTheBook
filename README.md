@@ -1,68 +1,48 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# **HOOK THE BOOK**
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## TARGET
 
-### `npm test`
+This project is designed to share books with people and control who have your lent books.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## TECHNOLOGIES
 
-### `npm run build`
+| Transversal      | Server-side | Client-side | Testing |
+| ---------------- | ----------- | ----------- | ------- |
+| Javascript (ES6) | Firebase    | React       | Jest    |
+| HTML             |             | CSS3        | Enzime  |
+|                  |             | SASS        |         |
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Functional description:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+In this application users can login first and having done that they can add their books by typing ISBN code. Also, they can check books from another people and reserve it.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Users can manage if they want to refuse or accept to lend the book.
 
-### `npm run eject`
+Users can control who hava their lent books.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### UML Diagram (User Cases)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+![](/Users/rafelolmos/Downloads/UML Diagram.png)
 
-## Learn More
+## Technical description:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### DATA MODEL
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+In the diagram below we can see the schemas used, its properties and how are they interlinked in between each other. This structures were constructed prior to the server-side functional logic.
 
-### Code Splitting
+![](/Users/rafelolmos/Downloads/Data Model.png)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+### BLOCK MODEL
 
-### Analyzing the Bundle Size
+The project was built following this layer separation architechture:
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+[![block model](https://github.com/EzequielBurgosL/singing-lab/raw/develop/docs/images/block-model.png)](https://github.com/EzequielBurgosL/singing-lab/blob/develop/docs/images/block-model.png)
 
-### Making a Progressive Web App
+## DESIGN (screenshots)
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

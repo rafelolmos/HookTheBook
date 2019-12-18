@@ -10,12 +10,9 @@ const Header = () => {
     const user = useSelector(state => state.user);
     const history = useHistory()
 
-    console.log('user: ', user);
-
     const handleLogout = () => {
       logout();
       history.push('/');
-      console.log('history: ', history);
     }
 
     return (

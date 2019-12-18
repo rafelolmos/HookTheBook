@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux'
 
-// import uploadFile from '../../services/storage';
 import { addItem } from '../../services/database';
 
 import './Preview.scss';
@@ -24,7 +23,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
             published,
             description,
             image,
-            bookState: 'available', //no se m'afegeix al firestore
+            bookState: 'AVAILABLE',
             timestamp: +(new Date())
         };
         

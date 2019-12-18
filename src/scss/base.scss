@@ -12,53 +12,7 @@ body {
     min-height: 100vh;
 }
 h1{
-    color: white
+    margin-left: 2%;
+    width: max-content;;
+    color: white;
 }
-
-// body::before {
-//     content: "";
-//     position: absolute;
-//     top: 0; 
-//     left: 0;
-//     width: 100%; 
-//     height: 100%;  
-//     opacity: .4; 
-//     z-index: -1;
-//     background: url(../images/books-background.jpeg);
-// }
-
-//  li{
-//     width:100px;
-//     color: white;
-//     background:  cornflowerblue;
-//     border: none;
-//     padding: 10px 20px 10px 20px;
-//     margin: 15px 10px 10px 5px;
-//     border-radius: 30px 30px 30px 2px;
-//     font-size: 16px;
-//     &:hover{
-//         background: rgb(4, 91, 252);
-//         color:#fff;
-//     }
-//     &:link{
-//         color:#fff;
-//         text-decoration: none;
-//     }
-//     &:visited{
-//         color:#fff;
-//         text-decoration: none;
-//     }
-// }
-
-
-/*
-    TODO:
-
-    1.- Add general styles for the body
-    2.- Add reset styles
-    3.- Add general font sizes (h1, h2, h3, p, span...)
-    4.- Add common colors and variables in a variables file
-    
-    EXTRA:
-    - Add a mixins file
-*/

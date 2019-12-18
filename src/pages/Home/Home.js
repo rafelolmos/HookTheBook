@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import Layout from '../../Layout';
 import SearchISBN from '../../components/SearchISBN';
 import BookISBNSearch from '../../components/AddBookButton/AddBookButton';
-import './Home.scss'
 
 const Home = () => {
 

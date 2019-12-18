@@ -39,7 +39,6 @@ function App() {
 
   useEffect(() => {
     const cancelObserver = registerAuthObserver(async (user) => {
-      console.log("TCL: cancelObserver -> user", user)
       if (user) {
         const profile = await getItem('users', user.uid);
         if (profile) {
@@ -47,7 +46,7 @@ function App() {
           dispatch(setUser(profile))
           
         } else {
-          console.log("todavía se está registrando");
+          console.log("Already registering");
         }
       } else {
         // setUserRedux(null);
@@ -61,7 +60,7 @@ function App() {
     }
   }, []);
 
-  const isLogged = user!== null
+  const isLogged = user !== null
   // ? <Route path="/" component={Home} />
   // : <Route path="/" component={Login} />;
 
@@ -76,7 +75,7 @@ function App() {
           {!isLogged && <Route path="/" exact component={Login} />}
           {!isLogged &&<Route path="/signup" component={Signup}></Route>}
           {!isLogged && <Route path="/login" component={Login}></Route>}
-          {/* {user && <Route path="/user/:id" component={Home} />} */}
+          {user && <Route path="/user/:id" component={Home} />}
           <Route path="/my-books" component={MyBooks} />
           <Route path="/my-friends-books" component={MyFriendsBooks} />
           <Route path="/my-alerts" component={MyAlerts} />
