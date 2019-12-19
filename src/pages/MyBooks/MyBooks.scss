@@ -6,22 +6,19 @@
         width:auto
     }
     .navigation-menu{
-        width:auto;
-        height: 100px;
-
+        display:flex;
+        align-self: center;
+        height: 140px;
+        justify-content: space-between;
     }
 }
 
 .cardBook-container{
-    // display: flex;
-    // flex-flow: wrap;
-    // height: 550px;
-    // overflow-y: scroll;
     .window{
         width: 100vw;
         display: flex;
         flex-flow: wrap;
-        height: 550px;
+        height: 100vh;
         overflow-y: scroll;
     }
 }

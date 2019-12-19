@@ -36,7 +36,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
     return ( 
         <div className="form-content">
             <div className="preview">
-                <img src={image} alt="" width="60px" />
+                <img src={image} alt="" width="50px" height="70px" />
                 <div className="book-information">
                     <p className="title">Title: <span>{title}</span></p>
                     <p className="author">Author: <span>{authors}</span></p>

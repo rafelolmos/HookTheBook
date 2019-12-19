@@ -6,6 +6,7 @@ import Preview from '../Preview';
 
 const BookISBNSearch = ({ valueISBN = '' }) => {
     const [bookItem, setBookItem] = useState({})
+
     
     useEffect(()=>{
         if(valueISBN){
@@ -19,9 +20,6 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
             })
         }
     },[valueISBN])
-    
-    console.log('bookItem: ', bookItem);
-    console.log('setBookItem: ', setBookItem);
     
     if (!Object.keys(bookItem).length) return ''
         

@@ -9,10 +9,11 @@ body {
     font-family: 'Tahoma', 'Geneva', 'sans-serif';
     background: url(../images/books-background.jpeg);
     background-attachment: fixed;
-    min-height: 100vh;
+    height: 100vh;
+    // min-height: 100vh;
 }
 h1{
-    margin-left: 2%;
+    margin-left: 5%;
     width: max-content;;
     color: white;
 }

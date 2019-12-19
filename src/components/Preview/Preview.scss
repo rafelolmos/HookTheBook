@@ -13,7 +13,8 @@
         .book-information{
             display: flex;
             flex-direction: column;
-            margin: 5px;
+            font-size: 11px;
+            margin: 1px;
             span{
                 color: brown;
             }
@@ -21,10 +22,10 @@
         .addBook{
             background:  cornflowerblue;
             border: none;
-            padding: 10px 20px;
+            padding: 10px;
             border-radius: 10px;
             color: #fff;
-            font-size: 16px;
+            font-size: 14px;
             &:hover{
                 background: rgb(4, 91, 252);
                 color:#fff;

@@ -25,6 +25,7 @@ const CardBook = ({ book }) => {
     }
     const handleRefuseBook = async () => {
         book.bookState = 'AVAILABLE';
+        book.userRequest = ''
         await updateItem('books', book,book.id)
     }
 
