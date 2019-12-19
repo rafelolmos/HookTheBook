@@ -1,6 +1,6 @@
 # **HOOK THE BOOK**
 
-
+[]https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/giphy.gif
 
 
 
@@ -27,8 +27,7 @@ Users can control who hava their lent books.
 ### UML Diagram (User Cases)
 
 
-
-![](/Users/rafelolmos/Downloads/UML Diagram.png)
+[](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/UML%20Diagram.png)
 
 ## Technical description:
 
@@ -36,13 +35,11 @@ Users can control who hava their lent books.
 
 In the diagram below we can see the schemas used, its properties and how are they interlinked in between each other. This structures were constructed prior to the server-side functional logic.
 
-![](/Users/rafelolmos/Downloads/Data Model.png)
+[](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/Data%20Model.png)
 
 ### BLOCK MODEL
 
-The project was built following this layer separation architechture:
 
-[![block model](https://github.com/EzequielBurgosL/singing-lab/raw/develop/docs/images/block-model.png)](https://github.com/EzequielBurgosL/singing-lab/blob/develop/docs/images/block-model.png)
 
 ## DESIGN (screenshots)
 

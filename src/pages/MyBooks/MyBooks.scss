@@ -8,14 +8,16 @@
     .navigation-menu{
         display:flex;
         align-self: center;
-        height: 140px;
+        height: auto;
+        margin: 10px 0;
         justify-content: space-between;
     }
 }
 
 .cardBook-container{
+
     .window{
-        width: 100vw;
+        // width: 100vw;
         display: flex;
         flex-flow: wrap;
         height: 100vh;

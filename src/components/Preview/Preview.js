@@ -6,13 +6,16 @@ import { addItem } from '../../services/database';
 import './Preview.scss';
 
 
-const Preview = ({title = '', authors = '', pages = 0, published = '', description = '', image = '', bookState = 'available' }) => {
+const Preview = ({title = '', authors = '', pages = 0, published = '', description = '', image = '', bookState = 'AVAILABLE', setBookItem={setBookItem}}) => {
     const user = useSelector((state)=> state.user)
 
     const [book, setBook] = useState([]);
+
     
     const handleAddBook = async () => {
         if (!book) return;
+        
+        setBookItem({})
         
         const data = {   
             user: user.id,
@@ -29,7 +32,7 @@ const Preview = ({title = '', authors = '', pages = 0, published = '', descripti
         
         const result = await addItem('books', data);
         if (result) {
-            setBook('');
+            setBook({});
         }
     };
 

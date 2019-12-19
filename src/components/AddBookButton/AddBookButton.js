@@ -4,9 +4,8 @@ import _get from 'lodash.get';
 import Preview from '../Preview';
 
 
-const BookISBNSearch = ({ valueISBN = '' }) => {
+const BookISBNSearch = ({ valueISBN = ''}) => {
     const [bookItem, setBookItem] = useState({})
-
     
     useEffect(()=>{
         if(valueISBN){
@@ -25,6 +24,7 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
         
     return (
         <>
+            {valueISBN=''}
             <Preview
                 title={bookItem.title} 
                 authors={bookItem.authors[0]}
@@ -32,6 +32,7 @@ const BookISBNSearch = ({ valueISBN = '' }) => {
                 published={bookItem.publishedDate}
                 description={bookItem.description} 
                 image={bookItem.imageLinks.thumbnail}
+                setBookItem={setBookItem}
             />
         </>
         );
