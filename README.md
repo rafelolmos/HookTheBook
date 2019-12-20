@@ -1,6 +1,6 @@
 # **HOOK THE BOOK**
 
-![Hook]https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/giphy.gif
+![Hook](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/giphy.gif)
 
 
 
@@ -40,6 +40,24 @@ In the diagram below we can see the schemas used, its properties and how are the
 ### BLOCK MODEL
 
 
-
 ## DESIGN (screenshots)
+####Login
+![Login](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/Login.png)
 
+####My books
+![My Books](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/MyBooks.png)
+
+####Search by ISBN
+![Search Book ISBN](https://github.com/rafelolmos/HookTheBook/blob/develop/src/SearchBookISBN.png)
+
+###Hook a Book
+![Hook a book](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/HookBook.png)
+
+####Add a book
+![Add a book](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/BookAdded.png)
+
+####My friends books
+![My friends books](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/MyFriendsBooks.png)
+
+####Manage Book
+![Manage book](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/ManageBook.png)
