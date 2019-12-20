@@ -1,6 +1,6 @@
 # **HOOK THE BOOK**
 
-https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/giphy.gif
+![hook](https://github.com/rafelolmos/HookTheBook/blob/develop/src/images/giphy.gif)
 
 
 
